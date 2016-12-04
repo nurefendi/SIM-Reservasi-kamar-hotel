@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2016 at 07:27 AM
+-- Generation Time: Dec 04, 2016 at 08:26 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -107,9 +107,19 @@ CREATE TABLE IF NOT EXISTS `tbpengunjung` (
   `jns_kelamin` varchar(10) NOT NULL,
   `nationality` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `no_hp` int(12) NOT NULL,
+  `no_hp` varchar(12) NOT NULL,
   PRIMARY KEY (`id_pengunjung`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbpengunjung`
+--
+
+INSERT INTO `tbpengunjung` (`id_pengunjung`, `nama`, `jns_kelamin`, `nationality`, `email`, `no_hp`) VALUES
+('2621253551733232', 'Mike Luwis', 'Laki-Laki', 'Jerman', 'mike10@yahoo.com', '062253428778'),
+('3102014403910312', 'Andika Pratama', 'Laki-Laki', 'Indonesia', 'andikapratama@gmail.com', '081250554363'),
+('3102014422910312', 'Laudya Cintya Bella', 'Perempuan', 'Indonesia', 'laudyabella@gmail.co.id', '089732451113'),
+('8753262125355174', 'Angela Chang', 'Perempuan', 'Taiwan', 'angelachang@gmail.com', '056733212401');
 
 -- --------------------------------------------------------
 
@@ -124,10 +134,19 @@ CREATE TABLE IF NOT EXISTS `tbreservasi` (
   `lama_nginap` int(10) NOT NULL,
   `id_pengunjung` varchar(16) NOT NULL,
   `id_tipekamar` varchar(10) NOT NULL,
-  `tipekamar` varchar(50) NOT NULL,
   `no_kamar` int(10) NOT NULL,
   PRIMARY KEY (`id_reservasi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbreservasi`
+--
+
+INSERT INTO `tbreservasi` (`id_reservasi`, `check_in`, `check_out`, `lama_nginap`, `id_pengunjung`, `id_tipekamar`, `no_kamar`) VALUES
+('1611-0001', '2016-12-02', '2016-12-08', 6, '2621253551733232', 'ST001', 17),
+('1611-0002', '2016-12-02', '2016-12-04', 2, '3102014403910312', 'DL001', 1),
+('1611-0003', '2016-12-03', '2016-12-08', 5, '3102014422910312', 'DL002', 8),
+('1611-0004', '2016-12-05', '2016-12-09', 4, '8753262125355174', 'ST003', 26);
 
 -- --------------------------------------------------------
 
@@ -149,12 +168,12 @@ CREATE TABLE IF NOT EXISTS `tbtipekamar` (
 --
 
 INSERT INTO `tbtipekamar` (`id_tipekamar`, `tipe_kamar`, `kapasitas_org`, `fasilitas`, `harga`) VALUES
-('TP001', 'Standard Room (Single)', 1, 'single bed, Tv', 100000),
-('TP002', 'Standard Room (Couple)', 2, 'double bed, Tv', 150000),
-('TP003', 'Standard Room (Family)', 3, 'Double bed, Single Bed, Tv', 200000),
-('TP004', 'Suite Room (Single)', 1, 'Single Bed, Tv, Kulkas', 150000),
-('TP005', 'Suite Room (Couple)', 2, 'Double bed, Tv, Kulkas', 200000),
-('TP006', 'Suite Room (Family)', 3, 'Double bed, Single Bed, Tv, Kulkas', 250000);
+('DL001', 'Deluxe Room (Single)', 1, 'Single Bed, Tv, Kulkas', 150000),
+('DL002', 'Deluxe Room (Couple)', 2, 'Double bed, Tv, Kulkas', 200000),
+('DL003', 'Deluxe Room (Family)', 3, 'Double bed, Single Bed, Tv, Kulkas', 250000),
+('ST001', 'Standard Room (Single)', 1, 'single bed, Tv', 100000),
+('ST002', 'Standard Room (Couple)', 2, 'double bed, Tv', 150000),
+('ST003', 'Standard Room (Family)', 3, 'Double bed, Single Bed, Tv', 200000);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
