@@ -1,7 +1,7 @@
 Final Project PWL AMIKOM
 Sistem Informasi Reservasi Kamar Hotel
 
-=> CODEIGNITER
+=> CODEIGNITER v 3.0.6
 
 KELOMPOK :
 
@@ -16,5 +16,5 @@ DOSEN :
 
 ARIF DWILAKSITO, M.Kom
 
-=> https://github.com/nurefendi/FP-PWL.git
+=> https://github.com/nurefendi/SIM-Reservasi-kamar-hotel.git
 
